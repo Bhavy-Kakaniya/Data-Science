@@ -107,20 +107,36 @@ import pandas as pd
 # print(cat)
 # print(df['Sales'].agg(['sum', 'mean', 'min', 'max', 'count', 'std', 'median']))
 
-data = {
-    'Date': pd.date_range('2023-01-01', periods=20),
-    'Product': ['A', 'B', 'C', 'D'] * 5,
-    'Region': ['East', 'West', 'North', 'South', 'East', 'West', 'North', 'South', 'East', 'West',
-            'North','South', 'East', 'West', 'North', 'South', 'East', 'West', 'North', 'South'],
-    'Sales': np.random.randint(100, 1000, 20),
-    'Units': np. random. randint(10, 100, 20),
-    'Rep': ['John', 'Mary', 'Bob', 'Alice', 'John', 'Mary', 'Bob', 'Alice', 'John', 'Mary',
-            'Bob', 'Alice', 'John', 'Mary', 'Bob', 'Alice', 'John', 'Mary', 'Bob', 'Alice']
-}
-df = pd.DataFrame(data)
-# print(df)
-df['Month'] = df['Date'].dt.month_name()
-df['Quarter'] = 'Q' + df['Date'].dt.quarter.astype(str)
+# data = {
+#     'Date': pd.date_range('2023-01-01', periods=20),
+#     'Product': ['A', 'B', 'C', 'D'] * 5,
+#     'Region': ['East', 'West', 'North', 'South', 'East', 'West', 'North', 'South', 'East', 'West',
+#             'North','South', 'East', 'West', 'North', 'South', 'East', 'West', 'North', 'South'],
+#     'Sales': np.random.randint(100, 1000, 20),
+#     'Units': np. random. randint(10, 100, 20),
+#     'Rep': ['John', 'Mary', 'Bob', 'Alice', 'John', 'Mary', 'Bob', 'Alice', 'John', 'Mary',
+#             'Bob', 'Alice', 'John', 'Mary', 'Bob', 'Alice', 'John', 'Mary', 'Bob', 'Alice']
+# }
+# df = pd.DataFrame(data)
+# # print(df)
+# df['Month'] = df['Date'].dt.month_name()
+# df['Quarter'] = 'Q' + df['Date'].dt.quarter.astype(str)
 
 # print(pd.pivot_table(df, values="Sales", index="Region", columns="Product", aggfunc="median"))
-print(pd.pivot_table(df, values=["Sales", "Units"], index="Region", columns="Product", aggfunc="median"))
+# print(pd.pivot_table(df, values=["Sales", "Units"], index="Region", columns="Product", aggfunc="median"))
+# print(pd.crosstab(df['Region'], df['Product']))
+
+# df = pd.DataFrame({
+#     'A': [1, 2, 3, 4, 5],
+#     'B': [10, 20, 30, 40, 50],
+#     'C': [100, 200, 300, 400, 500]
+# })
+
+# print(df.shape, df.colums, df.info(), df.describe())
+# print(df['A']) + 10
+
+# def sqr(x):
+# 	return x**2
+
+# print(df['B'].apply(sqr))
+# df['D'] = df['B'].apply(sqr)
