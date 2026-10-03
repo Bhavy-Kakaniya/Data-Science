@@ -64,10 +64,10 @@ df['item_price'].astype(float)
 
 
 # ------------------- unit 2 -------------------
-# linear regression Y = b0 + b1X relation between 1 independent and dependent variable,
+# linear regression Y = b0 + b1X relation between 1 independent and 1 dependent variable,
 # assuming relation is straight line
 # b0 = y, intercept b1 = slope
-# ordinary least squares: estimate the parameters b0...bn of a linear model by minimizing sum of squared diff between observed values and predicted values
+# ordinary least squares: estimate the parameters of a linear model by minimizing sum of squared diff between observed values and predicted values
 # rss: measures error of regression model on given data
 # R squared: range 0 to 1, goodness of fit measure in regresion, how well the independent variables in a statistical model explains variation in dependent variable
 # cost function measures how wrong the model's prediction are
@@ -75,3 +75,12 @@ df['item_price'].astype(float)
 # regression is way to predict number, helps to find out how one thing changes when other changes
 # multiple linear regression is weighted sum of influences from multiple independent variables x1 x2 x3
 # polynomial linear regression one or more dependent variable are of different powers
+# logistic regression uses sigmoid function to convert linear output in probability between 0 and 1 and threshold can decide yes or no
+# regularisation is used to reduce overfitting by adding penalty term to model's loss function. 
+# discourages model from using large coefficients and helps generalize better to unseen data.
+#  The regularization strength is controlled by lambda
+# lasso makes weight exactly 0, perform feature selection, useful when only some features are important, can remove unwanted features
+# ridge makes weight nearly 0, shrinks coefficient, useful when many features are useful, keeps all feature
+# likelihood measures how well logistic regression model explains data
+# sigmoid function used to map linear regression output in 0 to 1
+# Maximum Likelihood Estimation is common method to fit logistic regression model
