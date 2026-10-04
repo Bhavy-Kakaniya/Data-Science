@@ -103,7 +103,12 @@ df['item_price'].astype(float)
 # selection is based on ID3, gain ratio, gini index
 # stop when all data is pure, max depth is reached
 # requires feature scaling
-
+# Gini Index measures how mixed are the classes in this group
+# 1 - a2 - b2
+# decision tree generally chooses split with Lowest Gini Index
+# Gain ratio = information gain / split information
+# higher gain ratio is selected
+# gain ratio = C4.5, gini index = cart
 
 # ------ model evaluation ------
 # True Positive: model predicted positive and it was actually positive
@@ -140,3 +145,31 @@ df['item_price'].astype(float)
 # Hyperplane: decision boundary that separates data points of different classes, 2D line, 3D plane higher dimensions hyperplane
 # Margin (ε-insensitive loss): distance between hyperplane and support vectors margin larger good margin smaller margin bad margin
 # Support Vectors: data points closest to hyperplane critical in defining its position and orientation they support hyperplane
+# can also used for regression
+
+# bootstrap is random sampling with replacement, same observation can occur multipe time, 
+# used to estimate how reliable model is by repeatedly creating new datasets from original dataset
+# ROC curve → plots True Positive Rate against False Positive Rate at different classification thresholds.
+# evaluate how well a binary classification model can distinguish between two classes
+
+# bagging
+# Start with original dataset, random samples taken with replacement, Train separate model on each sample, Combine their predictions
+# Uses majority voting, random forest, reduces variance, models are trained independently
+
+# boosting
+# models trained sequentially, focus on previous error, reduces bias and variance, ada boost
+
+# stacking: combine different types of ml models and use another model to make final prediction, ask different models let another model decide which answers to trust
+# predictions are passed to meta model, final prediction comes from meta model
+
+# fit() looks at your data and learns required parameters = learn
+# transform() uses what was learned by fit() to transform the data = apply
+# Ensemble learning means combining multiple machine-learning models to make one stronger model
+
+
+# -------------------- Unit 4 --------------------
+
+# clustering groups similar data points together
+# K-Means unsupervised clustering algorithm that divides data into K clusters by repeatedly assigning points to nearest centroid and updating centroids using mean of assigned points
+# Choose K → Assign → Calculate Mean → Repeat
+# K-Means uses the average (mean) as the center, while K-Medoids uses an actual data point as the center.
