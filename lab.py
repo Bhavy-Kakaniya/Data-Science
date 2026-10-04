@@ -84,3 +84,59 @@ df['item_price'].astype(float)
 # likelihood measures how well logistic regression model explains data
 # sigmoid function used to map linear regression output in 0 to 1
 # Maximum Likelihood Estimation is common method to fit logistic regression model
+# working of logistic regression: it calculates weighted combination of inputs x1, x2, x3, ..., xn and passes it to sigmoid function 
+# sigmoid function converts any number between 0 to 1, and thresold is 0.5 means any value abovev it will have class 1 and below will have 0
+# Features → weighted sum → sigmoid → probability → class
+# Regression means finding relationship between things and using that relationship to make prediction
+# Logistic regression → predicts probability, then turns it into class hence it is called regression
+# Log Loss measures how well your predicted probabilities match the actual answers
+# Log Loss gives a small penalty for good predictions and a big penalty for confident wrong predictions
+# Model A: 51%, Model B: 99% If the student fails, Model B should be punished much more because it was extremely confident and wrong
+# sigmoid only converts any value between 0 and 1, thresold converts the value as 0 or 1 and also it can be any value like 30%, 70%, etc
+
+
+# ------------------- unit 3 -------------------
+# decision tree used for classification, represents decision in terms of tree
+# internal node represents attributes, 
+# branches represents condition, lead represent final class
+# it starts with all attributes at root, selects best attribute for splitting, divides data and repeats,
+# selection is based on ID3, gain ratio, gini index
+# stop when all data is pure, max depth is reached
+# requires feature scaling
+
+
+# ------ model evaluation ------
+# True Positive: model predicted positive and it was actually positive
+# True Negative: model predicted negative and it was actually negative
+# False Positive: model predicted   positive and it was actually negative
+# False Negative: model predicted negative and it was actually positive
+
+# accuracy: how many were correct out of all predictions
+# precision: how many were actually positive out of all predicted positive
+# recall: how many did we correctly predicted out of all actual positive, type 1 error, important when disease detection predicted no disease actual has disease
+# f1 score: combined of precision and recall, higher F1 means model has better balance between both
+
+# Precision:When I say YES, am I usually correct?
+# Recall:Did I find most of actual YES cases?
+
+# accuracy = tp + tn / all 4 values
+# precision = tp / tp + fp
+# recall = tp / tp + fn
+# f1 = 2 * precision * recall / precision + recall
+
+# Cross-validation: Also know as k fold, where k is 10 recommend
+# Randomly partition data into k mutually exclusive subsets, each approximately equal size training and testing is performed k times
+# At i-th iteration, use Di as test set and others as training set
+# in first iteration, subsets D2,..., Dk are training set to obtain a first model, which is tested on D1
+
+# knn lazy learning algorithm, training phase is fast, does not make any assumptions on data distribution
+# small k overfit, large k underfit
+# majority similar neighbour is answer
+# a feature ranging more can dominate over lower ranged model
+
+# naive bayes calculates probabilities, very fast, dont require scaling
+
+# ------------ svc ------------
+# Hyperplane: decision boundary that separates data points of different classes, 2D line, 3D plane higher dimensions hyperplane
+# Margin (ε-insensitive loss): distance between hyperplane and support vectors margin larger good margin smaller margin bad margin
+# Support Vectors: data points closest to hyperplane critical in defining its position and orientation they support hyperplane
