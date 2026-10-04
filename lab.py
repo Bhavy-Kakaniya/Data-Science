@@ -173,3 +173,18 @@ df['item_price'].astype(float)
 # K-Means unsupervised clustering algorithm that divides data into K clusters by repeatedly assigning points to nearest centroid and updating centroids using mean of assigned points
 # Choose K → Assign → Calculate Mean → Repeat
 # K-Means uses the average (mean) as the center, while K-Medoids uses an actual data point as the center.
+
+# DBSCAN Density-Based Spatial Clustering of Applications with Noise: groups data points based on how closely packed they are
+# can identify outliers/noise.
+# DBSCAN uses two parameters: 
+# 1. eps (ε) defines neighborhood radius How close do two points need to be to be considered neighbors?
+# 2. minPts: tells DBSCAN how many points need to be inside that neighborhood for area to be considered dense?
+# Three types of points
+# 1. Core Point: point that has at least minPts points in its neighborhood.
+# Lots of nearby points → Core point
+# 2. Border Point: A point that isn't dense enough to be a core point itself, but is close to a core point.
+# 3. Noise Point: point that isn't sufficiently close to a dense region.
+# The isolated point becomes noise.
+
+# The Elbow Method is a technique used to determine the optimal number of clusters in K-Means by plotting the WCSS 
+# (inertia) against different values of K and selecting the point where the decrease in WCSS starts to slow significantly.
